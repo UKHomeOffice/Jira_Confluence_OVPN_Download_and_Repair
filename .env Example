@@ -1,0 +1,4 @@
+For the Script to work properly please enter your VPN URL into a .env file in your Downloads folder. Surround this URL with "".
+
+E.G:
+"https://www.google.co.uk/"
