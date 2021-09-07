@@ -1,10 +1,12 @@
 ﻿$USER = $env:UserName
+$VPNEnv = $Env:Temp = "C:\Users\$USER\Downloads\.env"
+$URL = Get-Content $VPNEnv 
 
 # removes any jira-confluence ovpn files in users downloads folder
 Remove-Item -Path "C:\Users\$USER\Downloads\vpn-jira-confluence*.ovpn"
 
 # accesses url for file download using users default browser
-Start-Process "https://access-acp.digital.homeoffice.gov.uk/ui/profiles/jira-confluence/issue?template=Default"
+Start-Process $URL
 
 # stalls the program until new jira-confluence ovpn file has been downloaded
 # should have a termination condition after a certain amount of time but beyond scope of this change
